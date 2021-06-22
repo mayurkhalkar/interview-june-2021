@@ -12,8 +12,7 @@ public class ConvertToBinary {
             x = a + x;
             n = n / 2;
         }
-    return x;
-          
+    return x;        
    
   }
 }
