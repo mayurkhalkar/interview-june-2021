@@ -2,10 +2,31 @@ package exam;
 
 public class CountCombinations {
 
-  public int getNumberOfWays(final int total, final int k)
-  {
-    //TODO write your code here to achieve the desired result as explained in Readme file for this problem.
-   
+  
+   static int count=0;
+static void printVector(ArrayList<Integer> arr)
+{
+    if (arr.size() != 1)
+    {
+        count++;
+    }
+}
+  static void findWays(ArrayList<Integer> arr, int i, int n,int k)
+{
+    if (n == 0)
+       printVector(arr);
+    for(int j = i; j <= n && j<=k; j++)
+    {
+        arr.add(j);
+        findWays(arr, j, n - j,k);
+        arr.remove(arr.size() - 1);
+    }
+}
+  public int getNumberOfWays(final int total, final int k) {
+    ArrayList<Integer> arr = new ArrayList<Integer>();
+    findWays(arr, 1, total,k);
+    return count;
+  }
   }
 
 }
