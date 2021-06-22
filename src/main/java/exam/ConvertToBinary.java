@@ -8,11 +8,7 @@ public class ConvertToBinary {
     String x = "";
         while(n > 0)
         {
-            int a = n % 2;
-            x = a + x;
-            n = n / 2;
-        }
-    return x;
+          
    
   }
 }
